@@ -1,0 +1,20 @@
+CREATE TABLE orders (
+order_id INT AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+email VARCHAR(100) NOT NULL,
+phone_number VARCHAR(20) NOT NULL,
+delivery_address VARCHAR(200) NOT NULL,
+postcode VARCHAR(20) NOT NULL,
+product VARCHAR(100) NOT NULL,
+quantity INT NOT NULL,
+comments VARCHAR(500),
+name_on_card VARCHAR(100) NOT NULL,
+credit_card_type VARCHAR(20) NOT NULL,
+credit_card_number VARCHAR(16) NOT NULL,
+credit_card_expiry VARCHAR(5) NOT NULL,
+cvv VARCHAR(5) NOT NULL,
+order_cost DECIMAL(10,2) NOT NULL, 
+order_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+order_status ENUM('PENDING', 'FULFILLED', 'PAID', 'ARCHIVED') NOT NULL DEFAULT 'PENDING'
+);
